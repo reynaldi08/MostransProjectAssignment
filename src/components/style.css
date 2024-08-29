@@ -1,0 +1,5 @@
+/* styles.css */
+.navbar-custom {
+    background-color: #02afc5 !important; /* !important to override default styles if necessary */
+}
+

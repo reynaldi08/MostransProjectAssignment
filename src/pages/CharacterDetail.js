@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './pages.css'; // Importing the CSS for styling
 
 const CharacterDetail = () => {
   const { id } = useParams();
@@ -23,14 +24,14 @@ const CharacterDetail = () => {
     fetchCharacter();
   }, [id]);
 
-  const handleAssignLocation = () => {
-    if (!newLocation.trim()) {
+  const handleAssignLocation = (location = newLocation.trim()) => {
+    if (!location) {
       alert("Location name cannot be empty.");
       return;
     }
     const updatedLocations = {
       ...locations,
-      [newLocation.trim()]: [...(locations[newLocation.trim()] || []), character]
+      [location]: [...(locations[location] || []), character]
     };
     setLocations(updatedLocations);
     localStorage.setItem('locations', JSON.stringify(updatedLocations));
@@ -39,17 +40,20 @@ const CharacterDetail = () => {
   };
 
   return (
-    <div>
+    <div className="character-detail">
       {character ? (
-        <div>
-          <h1>{character.name}</h1>
+        <div className="character-container">
           <img src={character.image} alt={character.name} />
-          <p>Status: {character.status}</p>
-          <p>Species: {character.species}</p>
-          <p>Gender: {character.gender}</p>
-          <p>Origin: {character.origin.name}</p>
-          <p>Last Location: {character.location.name}</p>
-          <button className="btn btn-primary" onClick={() => setShowModal(true)}>Assign to Location</button>
+          <p className="origin">Origin: {character.origin.name}</p>
+          <hr />
+          <div className="text-center">
+            <h1>{character.name}</h1>
+            <p>Status: {character.status}</p>
+            <p>Species: {character.species}</p>
+            <p>Gender: {character.gender}</p>
+            <p>Last Location: {character.location.name}</p>
+          </div>
+          <button className="btn btn-primary full-width-button" onClick={() => setShowModal(true)}>Assign to Location</button>
 
           {showModal && (
             <div className="modal show d-block" tabIndex="-1" role="dialog">
@@ -64,10 +68,9 @@ const CharacterDetail = () => {
                   <div className="modal-body">
                     <ul className="list-group">
                       {Object.keys(locations).map(loc => (
-                        <button key={loc} className="list-group-item list-group-item-action" onClick={() => {
-                          setNewLocation(loc);
-                          handleAssignLocation();
-                        }}>{loc}</button>
+                        <button key={loc} className="list-group-item list-group-item-action" onClick={() => handleAssignLocation(loc)}>
+                          {loc}
+                        </button>
                       ))}
                     </ul>
                     <input
@@ -80,14 +83,13 @@ const CharacterDetail = () => {
                   </div>
                   <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Close</button>
-                    <button type="button" className="btn btn-primary" onClick={handleAssignLocation}>Add New Location</button>
+                    <button type="button" className="btn btn-primary" onClick={() => handleAssignLocation()}>Add New Location</button>
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          {/* Optional: Add an overlay when modal is visible */}
           {showModal && <div className="modal-backdrop fade show"></div>}
         </div>
       ) : <p>No character found.</p>}
