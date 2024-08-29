@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with Mostrans Project
 
 ## Available Scripts
 
@@ -9,7 +9,7 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 
-## Link Deployment
+## Link Deployment (Firebase)
 https://mostran-project.web.app/
