@@ -38,7 +38,10 @@ const CharactersList = () => {
                 <h5 className="card-title">{character.name}</h5>
                 <p className="card-text">{character.origin.name}</p>
                 <div className="text-right">
-                  <Link to={`/character/${character.id}`} className="btn custom-btn">
+                  <Link to={`/character/${character.id}`} className="btn custom-btn" style={{ backgroundColor: '#4cb5c3',
+                      borderColor: '#4cb5c3',
+                      borderRadius: '24px',
+                      color: 'white'}}>
                     Click here to see more details <i className="fas fa-arrow-right"></i>
                   </Link>
                 </div>

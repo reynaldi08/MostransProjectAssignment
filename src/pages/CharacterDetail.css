@@ -85,10 +85,11 @@
   }
   
   .btn-primary {
-    background-color: #02afc5; /* Adjust if you want a different button color */
-    border-color: #02afc5;
-    color: #000000 
-  }
+    background-color: #87c2ca; 
+    border-color: #87c2ca; 
+    color: #000000;
+    border-radius: 24px; 
+}
   
   .btn-secondary {
     background-color: #6c757d; /* Standard secondary button color */

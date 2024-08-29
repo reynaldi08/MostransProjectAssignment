@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import './CharacterDetail.css'; // Importing the CSS for styling
+import { useParams , Link} from 'react-router-dom';
+import './CharacterDetail.css';
 
 const CharacterDetail = () => {
   const { id } = useParams();
@@ -52,8 +52,12 @@ const CharacterDetail = () => {
             <p>Gender: {character.gender}</p>
             <p>Last Location: {character.location.name}</p>
           </div>
-          <button className="btn btn-primary full-width-button" onClick={() => setShowModal(true)}>Assign to Location</button>
-
+          <button className="btn btn-primary full-width-button assign-location-btn" style={{backgroundColor: '#87c2ca', 
+              color: '#000000',
+              borderRadius: '24px',
+               }}onClick={() => setShowModal(true)}>
+            Assign to Location
+        </button>
           {showModal && (
             <div className="modal show d-block" tabIndex="-1" role="dialog">
               <div className="modal-dialog" role="document">
@@ -82,7 +86,14 @@ const CharacterDetail = () => {
                   </div>
                   <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Close</button>
-                    <button type="button" className="btn btn-primary" onClick={() => handleAssignLocation()}>Add New Location</button>
+                    <Link to="/locations">
+                      <button type="button" className="btn btn-secondary" style={{backgroundColor : '#1a646e'}}onClick={(e) => {
+                        e.preventDefault(); 
+                        handleAssignLocation();
+                      }}>
+                        Add New Location
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
