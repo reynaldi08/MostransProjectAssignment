@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './pages.css'; // Importing the CSS for styling
 
 const CharacterDetail = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [character, setCharacter] = useState(null);
   const [locations, setLocations] = useState(JSON.parse(localStorage.getItem('locations') || '{}'));
   const [newLocation, setNewLocation] = useState('');
