@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './pages.css'; // Importing the CSS for styling
+import './CharacterDetail.css'; // Importing the CSS for styling
 
 const CharacterDetail = () => {
   const { id } = useParams();
