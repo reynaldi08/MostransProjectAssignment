@@ -52,8 +52,12 @@ const CharacterDetail = () => {
             <p>Gender: {character.gender}</p>
             <p>Last Location: {character.location.name}</p>
           </div>
-          <button className="btn btn-primary full-width-button" onClick={() => setShowModal(true)}>Assign to Location</button>
-
+          <button className="btn btn-primary full-width-button assign-location-btn" style={{backgroundColor: '#87c2ca', 
+              color: '#000000',
+              borderRadius: '24px',
+               }}onClick={() => setShowModal(true)}>
+            Assign to Location
+        </button>
           {showModal && (
             <div className="modal show d-block" tabIndex="-1" role="dialog">
               <div className="modal-dialog" role="document">
