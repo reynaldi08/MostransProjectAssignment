@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './pages.css'
+import './CharacterList.css'
 
 const CharactersList = () => {
   const [characters, setCharacters] = useState([]);
@@ -28,7 +28,7 @@ const CharactersList = () => {
 
   return (
     <div className="container mt-4">
-      <h1>Characters</h1>
+      <h1 style={{ textAlign: 'center', fontSize: '22px', marginBottom:'20px'}}>Characters of Rick Morty Universe</h1>
       <div className="row">
         {characters.map(character => (
           <div key={character.id} className="col-sm-6 col-md-4 col-lg-3 mb-4">

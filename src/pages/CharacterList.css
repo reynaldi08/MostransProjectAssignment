@@ -1,0 +1,16 @@
+/* css for characterlist */
+.custom-btn {
+    background-color: #4cb5c3;
+    border-color: #4cb5c3;
+    border-radius: 24px;
+    color: white;
+  }
+  .custom-btn:hover {
+    background-color: #3da6a3;
+    border-color: #3da6a3;
+  }
+
+.custom-card {
+    border-radius: 12px; 
+  }
+
