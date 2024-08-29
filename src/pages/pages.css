@@ -1,0 +1,118 @@
+/* css for characterlist */
+.custom-btn {
+    background-color: #4cb5c3;
+    border-color: #4cb5c3;
+    border-radius: 12px;
+    color: white;
+  }
+  .custom-btn:hover {
+    background-color: #3da6a3;
+    border-color: #3da6a3;
+  }
+
+.custom-card {
+    border-radius: 8px; 
+  }
+
+
+/* css for characterdetail */
+.character-detail {
+    background-color: #213032; /* Dark blue-gray background */
+    color: #87c2ca; /* Light blue text color */
+    min-height: 100vh; /* Ensures full vertical coverage */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+  
+.character-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    height: auto;
+}
+
+.character-container hr {
+    height: 2px; /* Set the thickness of the horizontal rule */
+    background-color: #000000; /* Set the color to black */
+    border: none; /* Remove any default border */
+    width: 100%; /* Ensure it spans the full width of the container */
+    margin: 20px 0; /* Add some vertical spacing */
+  }
+.origin {
+    font-size: 10px;
+    font-style: italic;
+    text-align: center;     
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.full-width-button {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 24px;
+    margin-top: 20px;
+}
+
+.modal.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 450px) {
+.full-width-button {
+    width: 100%;
+}
+}
+
+.modal-content {
+    background-color: #98dae3; /* Light blue background */
+    border-radius: 12px; /* Rounded edges */
+    color: #000000;
+  }
+  
+  .modal-title {
+    text-align: center; /* Center the title */
+    width: 100%;
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid #dee2e6; /* Optional: refine the header look */
+  }
+  
+  .modal-header, .modal-body, .modal-footer {
+   
+    color: #000000; /* Ensures text in these areas is also black */
+  }
+  
+  .list-group-item {
+    background-color: #659197; /* Set background color for list items */
+    color: #000000; /* Set text color for list items */
+    border: none; /* Optional: remove borders for a cleaner look */
+  }
+  
+  .form-control {
+    background-color: #659197; /* Keeps input fields white for visibility */
+    color: #000000; /* Ensures text typed into input fields is black */
+  }
+  
+  .btn-primary {
+    background-color: #02afc5; /* Adjust if you want a different button color */
+    border-color: #02afc5;
+    color: #000000 
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d; /* Standard secondary button color */
+    border-color: #6c757d;
+  }
+
+
+/* css for characterbylocation */
+
